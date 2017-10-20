@@ -127,7 +127,7 @@ var sameSame = function(array1, array2){			//accepts 2 parameters
 		}
 	}
 	
-sameSame([1,2,3,6], [2,1,6,3])
+sameSame([1,2,3,6], [2,1,3,3])
 	
 // [], [] -> true
 // [2, 3, 4], [1, 2, 3] -> false
@@ -190,7 +190,7 @@ for( i = 0 ; i < array1.length; i++)
     }
     return array1
 }
-console.log(mergeSortedArray([1,2,3,5,9],[4,6,7,8]));
+console.log(mergeSortedArray([1,2,3,5,9],[4,6,7,8,9]));
 
 
  
@@ -203,6 +203,30 @@ console.log(mergeSortedArray([1,2,3,5,9],[4,6,7,8]));
 //and add them to the end of the longer array. If both arrays are the same length, the function should do nothing. 
 //This function does not need to return a value. 
 
+var joinArray = function(arrayA, arrayB){					//two parameters
+	var completeArrayA
+	var completeArrayB										// defining soon to be used variables
+	var mixedArray
+
+	if (arrayA.length === arrayB.length){					// if the arrays ar the same length, do nothing
+		completeArrayA = arrayA
+		completeArrayB = arrayB
+
+		console.log(completeArrayA, completeArrayB)
+	}else if (arrayA.length > arrayB.length){				// if array A is longer than array B, dump array B into 
+		mixedArray = arrayA.concat(arrayB)					//array A by concatenating. Call the new array mixedArray
+
+		console.log(mixedArray)
+	}else {
+		mixedArray = arrayB.concat(arrayA)					// if none of those, dump array A into B, and call that 
+															// new array mixedArray
+		console.log(mixedArray)
+	}
+}
+
+joinArray([1,2,3], ['cat',6,7,8])
+
+
 // ```javascript
 // var numbers = ['four', 'eleven']
 // var animals = ['cat', 'bat', 'dolphin']
@@ -213,9 +237,67 @@ console.log(mergeSortedArray([1,2,3,5,9],[4,6,7,8]));
 // ```
 
 // 11. Write a function that uses `Math.random()` to generate a random number between 0-1. Replace all the 3's with 8's,
-// and replace all the 7's with 1's, then return this number. Note that this function should return a `number`, not a `string`. 
+// and replace all the 7's with 1's, then return this number. Note that this function should return a `number`, not a `string`.
+
+var myReplace = function(number){						
+
+	var replaced3Number 
+	var finalNumber 
+	var arrayNumber
+	
+
+	number = Math.random()										//creating random number
+	console.log(number)
+
+	arrayNumber = number.toString().split("")
+	console.log(arrayNumber)
+
+	for (var i = 0; i < arrayNumber.length; i++){
+
+		if (arrayNumber[i] === "3") {
+			arrayNumber[i] = "8"
+			console.log(arrayNumber) 
+		}
+		if (arrayNumber[i] === "7") {
+ 			arrayNumber[i] = "1"
+ 			console.log(arrayNumber)
+		}
+			console.log(parseFloat(arrayNumber.join("")))
+
+	}
+	return parseFloat(arrayNumber.join(""))
+}
+
+
+ 	myReplace()
+
+
+ 
+
+
+
+
+
+
 
 // 12. Write a function which accepts a sentence as a string, and returns the longest word in that sentence.
+
+// var longest = function(sentence){
+// 	var sentenceArray
+// 	var longestWord = 0
+
+// 	sentenceArray = sentence.split(" ")
+// 	console.log(sentenceArray)
+
+// 	for (var i = 0; i <sentenceArray.length; i++)
+// 		if (sentenceArray[i].length > longestWord){
+// 			longestWord = sentenceArray[i]
+// 		}
+// 	console.log(longestWord)
+// }
+	
+// 	longest(i am friends with a goat)
+
 
 // 'I ate toast for breakfast' -> 'breakfast'
 

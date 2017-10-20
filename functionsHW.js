@@ -1,4 +1,4 @@
-// 1. Write a function which takes an array of numbers, and returns the largest number in that array.
+// // 1. Write a function which takes an array of numbers, and returns the largest number in that array.
 
 var largest = function(array){                // function finds the largest number in array
 	
@@ -35,20 +35,30 @@ var isLeapYear = function(year){						// if the year is divisible by 4but not 10
 isLeapYear(2004)										
 
 
-// 2000 -> true
-// 1901 -> false
-// 2016 -> true
+// // 2000 -> true
+// // 1901 -> false
+// // 2016 -> true
 
-// 3. Write a function which takes an array of integers > 0 and returns the first integer which does not appear in that array. --------------INCOMPLETE
+// // 3. Write a function which takes an array of integers > 0 and returns the first integer which does not appear in that array. --------------INCOMPLETE
+
+// var appear = function(array){
+// 	var sortArray
 
 
+// 	sortArray = array.sort(function(a, b){return a-b})
+
+// 	console.log(sortArray)
 
 
-// [1,2,5] -> 3
-// [1,2,3,4,5] -> 6
-// [3,4,5] -> 1
+// }
 
- // 4. Write a function which takes an array of integers and returns an array with any duplicate integers removed.
+// appear(1,2,6,3)
+
+// // [1,2,5] -> 3
+// // [1,2,3,4,5] -> 6
+// // [3,4,5] -> 1
+
+//  // 4. Write a function which takes an array of integers and returns an array with any duplicate integers removed.
 
 var noRepeats = function(array){
 
@@ -67,43 +77,63 @@ var noRepeats = function(array){
 
 console.log(noRepeats([1,2,2,3,5,2]))
 
-// [1,1,2,3,1,2,3] -> [1,2,3]
-// [1,4,4,4,2,2,4,4,4] -> [1,4,2]
+// // [1,1,2,3,1,2,3] -> [1,2,3]
+// // [1,4,4,4,2,2,4,4,4] -> [1,4,2]
 
-//5. Write function that translates a text to Pig Latin, and another that translates back. -------------------------------------------------  INCOMPLETE 
- // English is translated to Pig Latin by taking the first letter of every word, moving it to 
+// //5. Write function that translates a text to Pig Latin, and another that translates back. -------------------------------------------------  INCOMPLETE 
+//  // English is translated to Pig Latin by taking the first letter of every word, moving it to 
 
+var pigLatin = function(string) {
+	var firstLetterString
 
+  string = string.split(' ')									
+  for (var i = 0; i < string.length; i++) {									
+    firstLetterString = string[i].slice(string[i].charAt(0))
 
-
-var piglatin = function(string){
-	var firstLetters
-	var splitter
-	splitter = string.split(" ")						// here I have removed spaces from the strings and have created an array
-
-	console.log(splitter)
-
-	for(var i = 0; i < splitter.length; i++){
-		firstLetters =  splitter[i].substring(0,1)		//now i have a new variable listing the first letters removed as strings?
-		
-														//???????????????????????????????????????????
-
-	console.log(firstLetters)
-	}
+    
+  }																			
+  console.log(firstLetterString)
+   console.log(string)
+  
 }
+pigLatin("Billy Goats Love Smells")
+
+
+
+// var piglatin = function(string){
+// 	var firstLetterArray
+// 	var splitter
+// 	var firstLetter
+
+// 	splitter = string.split(" ")						// here I have removed spaces from the strings and have created an array
+
+// 	console.log(splitter)
+// 	console.log("----------------------------")
+
+// for(var i = 0; i < splitter.length; i++){
+// 	firstLetter = splitter[i].charAt(0)
 	
 
-piglatin("The quick brown fox")
+// 		console.log(firstLetter)
+// 	}
+		
+// }														
+	
+
+
+	
+
+// piglatin("The quick brown fox")
 
 
 
 
 
 
-// "The quick brown fox" -> "Hetay uickqay rownbay oxfay".
+// // "The quick brown fox" -> "Hetay uickqay rownbay oxfay".
 
 
-// 6. Write a function which takes in two arrays and determines if they contain the same number of the same values.
+// // 6. Write a function which takes in two arrays and determines if they contain the same number of the same values.
 
 var sameSame = function(array1, array2){			//accepts 2 parameters 
 	if (array1.length !== array2.length){			//if the the length of the array1 is not equal to the length of array2, then false
@@ -129,13 +159,13 @@ var sameSame = function(array1, array2){			//accepts 2 parameters
 	
 sameSame([1,2,3,6], [2,1,3,3])
 	
-// [], [] -> true
-// [2, 3, 4], [1, 2, 3] -> false
-// ["a", "c", "b"], ["a", "b", "c"] -> true
-// [1, 1, 1], [1, 1, 1, 1] -> false
+// // [], [] -> true
+// // [2, 3, 4], [1, 2, 3] -> false
+// // ["a", "c", "b"], ["a", "b", "c"] -> true
+// // [1, 1, 1], [1, 1, 1, 1] -> false
 
-// 7. Write a function which takes in an array of numbers and a max cutoff value, and returns a new array with 
-//elements limited by the cutoff value.
+// // 7. Write a function which takes in an array of numbers and a max cutoff value, and returns a new array with 
+// //elements limited by the cutoff value.
 
 var maxReplace = function(array, maxNumber){	//array and maxNumber parameters
 
@@ -150,14 +180,15 @@ var maxReplace = function(array, maxNumber){	//array and maxNumber parameters
 	maxReplace([1,2,3,4,5,6,7], 4)
 
 
-// [1,2,3,4,5,6,7,8], 4 -> [1,2,3,4,4,4,4,4]
-// [1,5,7,3,1,5,7], 3 -> [1,3,3,3,1,3,3]
+// // [1,2,3,4,5,6,7,8], 4 -> [1,2,3,4,4,4,4,4]
+// // [1,5,7,3,1,5,7], 3 -> [1,3,3,3,1,3,3]
 
-// 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.-------------- INCOMPLETE 
+// // 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.-------------- INCOMPLETE 
 
 // var randomArray = function(){							//loop through an iteration of 10, each value looped is randomized 1-100,
 // 	var theArray = []									//each iteration is pushed into a new array
-// 	var newArray = []									// does not work, line 63 tainted
+// 	var newArray = []
+// 									// does not work, 
 // 	for (var i = 0; i < 10; i++){
 // 		theArray[i] = Math.ciel(Math.random()*100)
 // 		newArray.push(theArray[i])
@@ -167,16 +198,16 @@ var maxReplace = function(array, maxNumber){	//array and maxNumber parameters
 // }
 // 	randomArray()
 
-// -> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
-// -> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)
+// // -> [48, 5, 32, 2, 10, 11, 34, 95, 82, 93] (good!)
+// // -> [1, 1, 24, 63, 45, 84, 17, 11, 59, 13] (bad - duplicated number)
 
 //9. Write a function which takes two sorted lists and merges them into a new sorted list.---------------------------------------  COMPLETE BUT COPIED
 var mergeSortedArray = function(array1,array2){
 	for( var i = 0 ; i < array2.length ; i++ ){
 		array1.push(array2[i])
 	}
-	//console.log(a);
-for( i = 0 ; i < array1.length; i++)
+	
+
     {
         for( j = i + 1 ; j < array1.length; j++ ) 
         {
@@ -195,13 +226,13 @@ console.log(mergeSortedArray([1,2,3,5,9],[4,6,7,8,9]));
 
  
 
-// [1,2,5,6,9], [3,4,5,10] -> [1,2,3,4,5,5,6,9,10]
-// [], [] -> []
-// [-1, 0, 1], [-2, 2] -> [-2, -1, 0, 1, 2]
+// // [1,2,5,6,9], [3,4,5,10] -> [1,2,3,4,5,5,6,9,10]
+// // [], [] -> []
+// // [-1, 0, 1], [-2, 2] -> [-2, -1, 0, 1, 2]
 
-// 10. Write a function which accepts two arrays as input. The function should remove all the items from the shorter array, 
-//and add them to the end of the longer array. If both arrays are the same length, the function should do nothing. 
-//This function does not need to return a value. 
+// // 10. Write a function which accepts two arrays as input. The function should remove all the items from the shorter array, 
+// //and add them to the end of the longer array. If both arrays are the same length, the function should do nothing. 
+// //This function does not need to return a value. 
 
 var joinArray = function(arrayA, arrayB){					//two parameters
 	var completeArrayA
@@ -221,23 +252,24 @@ var joinArray = function(arrayA, arrayB){					//two parameters
 		mixedArray = arrayB.concat(arrayA)					// if none of those, dump array A into B, and call that 
 															// new array mixedArray
 		console.log(mixedArray)
+		return mixedArray
 	}
 }
 
 joinArray([1,2,3], ['cat',6,7,8])
 
 
-// ```javascript
-// var numbers = ['four', 'eleven']
-// var animals = ['cat', 'bat', 'dolphin']
-// arrayTransfer(numbers, animals)
-// console.log(numbers) // []
-// console.log(animals) // ['cat', 'bat', 'dolphin', 'four', 'eleven']
+// // ```javascript
+// // var numbers = ['four', 'eleven']
+// // var animals = ['cat', 'bat', 'dolphin']
+// // arrayTransfer(numbers, animals)
+// // console.log(numbers) // []
+// // console.log(animals) // ['cat', 'bat', 'dolphin', 'four', 'eleven']
 
-// ```
+// // ```
 
-// 11. Write a function that uses `Math.random()` to generate a random number between 0-1. Replace all the 3's with 8's,
-// and replace all the 7's with 1's, then return this number. Note that this function should return a `number`, not a `string`.
+// // 11. Write a function that uses `Math.random()` to generate a random number between 0-1. Replace all the 3's with 8's,
+// // and replace all the 7's with 1's, then return this number. Note that this function should return a `number`, not a `string`.
 
 var myReplace = function(number){						
 
@@ -272,7 +304,7 @@ var myReplace = function(number){
  	myReplace()
 
 
- // 12. Write a function which accepts a sentence as a string, and returns the longest word in that sentence. 
+//  // 12. Write a function which accepts a sentence as a string, and returns the longest word in that sentence. 
 
 var longest = function(sentence){
 	var sentenceArray
@@ -302,13 +334,41 @@ var longest = function(sentence){
 
 // 13. Write a function which accepts a sentence as a string. Capitalize the first letter of each word of the string, and return that. 
 
+
+var upperCase = function(string) {								
+  string = string.toLowerCase().split(' ')									//all to lowercase, and separated to an array at spaces
+  for (var i = 0; i < string.length; i++) {									//every string will have the first character removed and changed to upper
+    string[i] = string[i].charAt(0).toUpperCase() + string[i].slice(1) 		//case in a new array, each of those first characters will have the 
+  }																			//the remaining lowercase characters added to it via slice(1)
+  console.log(string.join(' '))
+  return string.join(' ')
+}
+upperCase("I'm a goat man")
+
+
+
+
+
+
+
 // 'I ate toast for breakfast' -> 'I Ate Toast For Breakfast'
 
 
-// 14. Write a function which takes two dates as strings in the format 'YYYY/MM/DD' and returns the number of days between them.
+// 14. Write a function which takes two dates as strings in the format 'YYYY/MM/DD' and returns the number of days between them.-------------INCOMPLETE
+
+
+
+
+
+
+
+
+
+
+
 // '1998/01/24', '1999/01/25' -> 366
 
-// 15. Write a function called `add` that adds two numbers together, and returns the result. The function must be defined such that 
+// 15. Write a function called `add` that adds two numbers together, and returns the result. The function must be defined such that ----------INCOMPLETE
 //it can be called in two different ways to achieve the same result. See the example below:
 
 

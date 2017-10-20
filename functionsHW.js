@@ -153,7 +153,7 @@ var maxReplace = function(array, maxNumber){	//array and maxNumber parameters
 // [1,2,3,4,5,6,7,8], 4 -> [1,2,3,4,4,4,4,4]
 // [1,5,7,3,1,5,7], 3 -> [1,3,3,3,1,3,3]
 
-// 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.----------------// INCOMPLETE 
+// 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.-------------- INCOMPLETE 
 
 // var randomArray = function(){							//loop through an iteration of 10, each value looped is randomized 1-100,
 // 	var theArray = []									//each iteration is pushed into a new array
@@ -249,10 +249,10 @@ var myReplace = function(number){
 	number = Math.random()										//creating random number
 	console.log(number)
 
-	arrayNumber = number.toString().split("")
+	arrayNumber = number.toString().split("")					//converting sumber to string
 	console.log(arrayNumber)
 
-	for (var i = 0; i < arrayNumber.length; i++){
+	for (var i = 0; i < arrayNumber.length; i++){				//looping and changeing 3 to 8, 7 to 1
 
 		if (arrayNumber[i] === "3") {
 			arrayNumber[i] = "8"
@@ -262,7 +262,7 @@ var myReplace = function(number){
  			arrayNumber[i] = "1"
  			console.log(arrayNumber)
 		}
-			console.log(parseFloat(arrayNumber.join("")))
+			console.log(parseFloat(arrayNumber.join("")))		//changing string to array to number
 
 	}
 	return parseFloat(arrayNumber.join(""))
@@ -272,31 +272,29 @@ var myReplace = function(number){
  	myReplace()
 
 
- 
+ // 12. Write a function which accepts a sentence as a string, and returns the longest word in that sentence. 
 
+var longest = function(sentence){
+	var sentenceArray
+	var longestWord = 0
+	var word
 
+	sentenceArray = sentence.split(" ")						//divide a series of words into an array, eliminating spaces
+	console.log(sentenceArray)
 
+	for (var i = 0; i < sentenceArray.length; i++){			// find length of all elements in array
+		console.log(sentenceArray[i].length)
 
-
-
-
-// 12. Write a function which accepts a sentence as a string, and returns the longest word in that sentence.
-
-// var longest = function(sentence){
-// 	var sentenceArray
-// 	var longestWord = 0
-
-// 	sentenceArray = sentence.split(" ")
-// 	console.log(sentenceArray)
-
-// 	for (var i = 0; i <sentenceArray.length; i++)
-// 		if (sentenceArray[i].length > longestWord){
-// 			longestWord = sentenceArray[i]
-// 		}
-// 	console.log(longestWord)
-// }
+		if (sentenceArray[i].length > longestWord){     	// if the string length is greater than zero than that string length will be the compared to the next string.
+			longestWord = sentenceArray[i].length
+			word = sentenceArray[i]							//longest word is returned
+		}	
+	}	console.log(longestWord)
+		console.log(word)
+		return word
+ }	
 	
-// 	longest(i am friends with a goat)
+	longest("I am friends with a goat")
 
 
 // 'I ate toast for breakfast' -> 'breakfast'
@@ -310,17 +308,52 @@ var myReplace = function(number){
 // 14. Write a function which takes two dates as strings in the format 'YYYY/MM/DD' and returns the number of days between them.
 // '1998/01/24', '1999/01/25' -> 366
 
-// 15. Write a function called `add` that adds two numbers together, and returns the result. The function must be defined such that it can be called in two different ways to achieve the same result. See the example below:
+// 15. Write a function called `add` that adds two numbers together, and returns the result. The function must be defined such that 
+//it can be called in two different ways to achieve the same result. See the example below:
+
+
+
+
+
+
+
 
 // ```javascript
 // var seven = add(5,2) // returns 7
 // seven = add(5)(2) // also returns 7
 // ```
 
-// 16. Write a function which takes one argument, and returns true if that argument is a whole number (a non-negative integer, e.g. 0, 1, 5, 21, 1000, etc). If the argument is negative, is a decimal number, or is not a number at all, return false. 
+// 16. Write a function which takes one argument, and returns true if that argument is a whole number 
+//(a non-negative integer, e.g. 0, 1, 5, 21, 1000, etc). If the argument is negative, is a decimal number, or is not a number at all, return false.
+
+var wholeNumber = function(number){
+	if(number < 0){
+		console.log(false)
+		return false
+	}else if (number % 1 !== 0){
+		console.log(false)
+		return false
+	}else if (isNaN(number) === true){
+		console.log(false)
+		return false
+	}else {
+		console.log(true)
+		return true
+	}
+}
+
+wholeNumber('goat')
 
 // 17. Write a function which returns a random integer from 1 to 10.
 
+var random = function(){
+	var number
+
+	number = Math.floor((Math.random()) * 10)
+	console.log(number)
+	return number
+}
+	random()
 
 
 

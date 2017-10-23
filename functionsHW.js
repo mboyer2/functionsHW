@@ -43,10 +43,10 @@ isLeapYear(2004)
 
 var appear = function(array){
 
-	for ( var i = 0; i < array.length; i++){
+	for ( var i = 0; i < array.length; i++){		
 		// console.log(array[i], i)
 
-		if ( !(array[i] === i + 1) ){
+		if ( !(array[i] === i + 1) ){						//if each element of array doesnt equal the last number in the array then return the former plus 1
 			console.log(array[i], i)
 			return i + 1
 		}
@@ -154,14 +154,14 @@ var maxReplace = function(array, maxNumber){	//array and maxNumber parameters
 // // [1,5,7,3,1,5,7], 3 -> [1,3,3,3,1,3,3]
 
 // // 8. Write a function which takes no input and returns an array of 10 distinct randomly generated integers between 1 and 100.
-var randomArray = function(){							//loop through an iteration of 10, each value looped is randomized 1-100,
+var randomArray = function(){							
 	var theArray = []
-	var randomNumber													//each iteration is pushed into a new array
+	var randomNumber													
 														
 	while(theArray.length < 10){
 
-		randomNumber = (Math.ceil(Math.random()*100))
-		if (!theArray.includes(randomNumber)){
+		randomNumber = (Math.ceil(Math.random()*100))		//if array is less than 10, create a random number, if that number is not included in the array
+		if (!theArray.includes(randomNumber)){				//add it to said array
 			theArray.push(randomNumber)
 		}
 
@@ -255,7 +255,7 @@ var myReplace = function(number){
 	number = Math.random()										//creating random number
 	console.log(number)
 
-	arrayNumber = number.toString().split("")					//converting sumber to string
+	arrayNumber = number.toString().split("")					//converting number to string
 	console.log(arrayNumber)
 
 	for (var i = 0; i < arrayNumber.length; i++){				//looping and changeing 3 to 8, 7 to 1
@@ -330,16 +330,19 @@ upperCase("I'm a goat man")
 
 // // 14. Write a function which takes two dates as strings in the format 'YYYY/MM/DD' and returns the number of days between them.
 
-var Difference = function(dateThen, dateNow){
-	dateThen = new Date().getTime()
-	dateNow = new Date().getTime()
+var Difference = function(dateThen, dateNow){						//find the difference between two dates
+	var Then = new Date(dateThen)
+	var Now = new Date(dateNow)
 
-	var elapsed = ((((dateNow - dateThen) / 1000) / 60) / 12) 
-	console.log(elapsed)
-	return elapsed
+	var elapsedMil = Now - Then 									// find time in milleseconds
+	var elapsedDay = elapsedMil / (1000 * 60 * 60 * 24)				// /* milleseconds, seconds, minutes, hours = days
+	console.log(elapsedDay) 
+	return elapsedDay
 }
 	
-Difference((1998,1,24), (1999,1,25))
+Difference('1998/1/24', '1999/1/25')
+
+
 
 
 
@@ -353,16 +356,24 @@ Difference((1998,1,24), (1999,1,25))
 // // 15. Write a function called `add` that adds two numbers together, and returns the result. The function must be defined such that 
 // //it can be called in two different ways to achieve the same result. See the example below:
 
-var add = function(number1, number2){
-	var added
+var add = function(number1, number2){						//simple addition function
 
-	added = number1 + number2
-	console.log(added)
-	return added
+	return  number1 + number2
 }
-	add(5,7)
+	console.log(add(5,7))
 
+// var adding = function(number1, number2){
+// 	if (typeof number2 === 'number'){
+// 		return number1 + number2
+// 	} 
+// 	else if (typeof b === 'undefined'){
+// 		var adding2 = function(num){
+// 			return adding2
+// 		}
+// 	}
+// }
 
+// 	console.log(adding(5)(2))
 
 
 

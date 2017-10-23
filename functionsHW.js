@@ -362,7 +362,7 @@ var add = function(number1, number2){						//simple addition function
 }
 	console.log(add(5,7))
 
-// var adding = function(number1, number2){
+// var adding = function(number1, number2){					// still abit confused here
 // 	if (typeof number2 === 'number'){
 // 		return number1 + number2
 // 	} 
